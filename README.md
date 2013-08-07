@@ -1,15 +1,30 @@
-dar-audio
-=========
+# DarAudio
 
-Requires:
----------
-jQuery 1.7+
-Jade runtime.js (included as jade-runtime.js)
+jQuery plugin for an HTML5 audio player with playlists.
 
-Notes:
----------
-Currently Using Bootstrap 2.3.2, however this requirement is loose and can be de-coupled easily by reconfiguring the template options.
+## Getting Started
+Download the [production version][min] or the [development version][max].
 
-Examples:
----------
-http://www.darmce.com/sites/dar-audio/examples/example.html
+[min]: https://raw.github.com/darrenmce/dar-audio/master/dist/daraudio.min.js
+[max]: https://raw.github.com/darrenmce/dar-audio/master/dist/daraudio.js
+
+In your web page:
+
+```html
+<script src="jquery.js"></script>
+<script src="dist/daraudio.min.js"></script>
+<script>
+jQuery(function($) {
+  $.awesome(); // "awesome"
+});
+</script>
+```
+
+## Documentation
+_(Coming soon)_
+
+## Examples
+_(Coming soon)_
+
+## Release History
+_(Nothing yet)_
