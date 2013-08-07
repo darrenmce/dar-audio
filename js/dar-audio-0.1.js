@@ -185,8 +185,7 @@
         }
     }
 
-    /* MODAL PLUGIN DEFINITION
-     * ======================= */
+    /* PLUGIN DEFINITION */
 
     $.fn.daraudio = function (options) {
         return this.each(function () {

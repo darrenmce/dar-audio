@@ -106,6 +106,7 @@
                 self.next();
             });
 
+            //played progress bar
             self.$ele.find('.da-progress').on('click',function (event) {
                 var totalWidth = parseInt(self.$ele.find('.da-progress').css('width'));
                 self.seekTo((event.offsetX / totalWidth) * self.ap.duration);
@@ -140,6 +141,7 @@
                 self.$ele.find('.da-progress .bar').css('width', 0);
                 self.$ele.find('.da-loaded').addClass('progress-striped progress-danger active').find('.bar').css('width', '100%');
             })
+            //set play times
             $(self.ap).bind('loadedmetadata', function () {
                 self.$ele.find('.da-time-progress').html('0:00');
                 self.$ele.find('.da-time-total').html(' / ' + self.msToTimeStamp(self.ap.duration));
@@ -185,8 +187,8 @@
         }
     }
 
-    /* MODAL PLUGIN DEFINITION
-     * ======================= */
+
+    /* PLUGIN DEFINITION */
 
     $.fn.daraudio = function (options) {
         return this.each(function () {
