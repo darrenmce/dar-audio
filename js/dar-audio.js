@@ -1,6 +1,24 @@
 (function ($) {
     'use strict';
 
+    //default bootstrap template locals
+    var defaultTemplateLocals = {
+        da: {
+            classes: {
+                row: "row-fluid", span3: "span3", span8: "span8", progress: "progress", textRight: "text-right", controlsContainer: "fluid-container", buttonGroup: "btn-group", button: "btn", iconPrev: "icon-step-backward", iconPlay: "icon-play", iconPause: "icon-pause", iconNext: "icon-step-forward"
+            }
+        }
+    };
+
+    //HTML Template - Generated using Jade
+    var DarAudioTemplate = function(locals) {
+        var buf = [];
+        var locals_ = (locals || {}), da = locals_.da;
+        buf.push("<div" + (jade.attrs({ "class": [(da.classes.row)] }, {"class": true})) + "><div" + (jade.attrs({ "class": [(da.classes.span3)] }, {"class": true})) + "><label>Playlist:</label><select class=\"da-pl-select\"></select></div><div" + (jade.attrs({ "class": [(da.classes.span8)] }, {"class": true})) + "><div class=\"da-title\"></div><div" + (jade.attrs({ "class": [('da-progress'), (da.classes.progress)] }, {"class": true})) + "><div style=\"width: 0%;\" class=\"bar bar-success\"></div></div><div" + (jade.attrs({ "class": [('da-loaded'), (da.classes.progress)] }, {"class": true})) + "><div style=\"width: 100%;\" class=\"bar\"></div></div><div" + (jade.attrs({ "class": [('da-time'), (da.classes.textRight)] }, {"class": true})) + "><span class=\"da-time-progress\"></span><span class=\"da-time-total\"></span></div><div" + (jade.attrs({ "class": [(da.classes.controlsContainer)] }, {"class": true})) + "><div" + (jade.attrs({ "class": [(da.classes.row)] }, {"class": true})) + "><div" + (jade.attrs({ "class": [(da.classes.span3)] }, {"class": true})) + "><div" + (jade.attrs({ "class": [(da.classes.buttonGroup)] }, {"class": true})) + "><button" + (jade.attrs({ "class": [('da-prev'), (da.classes.button)] }, {"class": true})) + "><i" + (jade.attrs({ "class": [(da.classes.iconPrev)] }, {"class": true})) + "></i></button><button" + (jade.attrs({ "class": [('da-play'), (da.classes.button)] }, {"class": true})) + "><i" + (jade.attrs({ "class": [(da.classes.iconPlay)] }, {"class": true})) + "></i></button><button" + (jade.attrs({ "class": [('da-pause'), (da.classes.button)] }, {"class": true})) + "><i" + (jade.attrs({ "class": [(da.classes.iconPause)] }, {"class": true})) + "></i></button><button" + (jade.attrs({ "class": [('da-next'), (da.classes.button)] }, {"class": true})) + "><i" + (jade.attrs({ "class": [(da.classes.iconNext)] }, {"class": true})) + "></i></button></div></div><div" + (jade.attrs({ "class": [('da-slider'), (da.classes.span3)] }, {"class": true})) + "><input type=\"range\" min=\"0\" max=\"100\" step=\"1\" value=\"50\" class=\"da-volume\"/></div></div></div></div></div><div" + (jade.attrs({ "class": [(da.classes.row)] }, {"class": true})) + "><audio class=\"da-audio\"><p>Your Browser Does Not Support HTML5 Audio</p></audio></div>");
+        ;
+        return buf.join("");
+    }
+
     var PlayList = function (options) {
         this.name = options.name || 'default';
         this.pos = 0;
@@ -42,6 +60,7 @@
         this.playList = 0;
         this.playLists = [];
         this.playListDef = options.playListDef || [];
+        this.TemplateLocals = options.templateLocals || defaultTemplateLocals;
     }
 
     DarAudio.prototype = {
@@ -184,6 +203,10 @@
                 seconds = '0' + seconds;
             }
             return minutes + ':' + seconds;
+        }, loadHtml : function() {
+            var self=this;
+            this.$ele.html(DarAudioTemplate(self.TemplateLocals));
+            return self;
         }
     }
 
@@ -195,8 +218,10 @@
             var $self = $(this);
             var data = $self.data('daraudio');
             if (!data) {
+                //create HTML
+                $self.html()
                 $self.data('daraudio', (data = new DarAudio(this, options)));
-                data.loadPlayLists().init();
+                data.loadHTML().loadPlayLists().init();
             }
         });
     };

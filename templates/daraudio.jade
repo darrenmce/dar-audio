@@ -1,0 +1,30 @@
+div(class=da.classes.row)
+    div(class=da.classes.span3)
+        label Playlist:
+        select.da-pl-select
+    div(class=da.classes.span8)
+        div.da-title
+        div.da-progress(class=da.classes.progress)
+            div.bar.bar-success(style="width: 0%;")
+        div.da-loaded(class=da.classes.progress)
+            div.bar(style="width: 100%;")
+        div.da-time(class=da.classes.textRight)
+            span.da-time-progress
+            span.da-time-total
+        div(class=da.classes.controlsContainer)
+            div(class=da.classes.row)
+                div(class=da.classes.span3)
+                    div(class=da.classes.buttonGroup)
+                        button.da-prev(class=da.classes.button)
+                            i(class=da.classes.iconPrev)
+                        button.da-play(class=da.classes.button)
+                            i(class=da.classes.iconPlay)
+                        button.da-pause(class=da.classes.button)
+                            i(class=da.classes.iconPause)
+                        button.da-next(class=da.classes.button)
+                            i(class=da.classes.iconNext)
+                div.da-slider(class=da.classes.span3)
+                    input.da-volume(type="range",min="0",max="100",step="1",value="50")
+div(class=da.classes.row)
+    audio.da-audio
+        p Your Browser Does Not Support HTML5 Audio
