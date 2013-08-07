@@ -1,9 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Dar-Audio Test</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/dar-audio.js"></script>
 </head>
 <body>
 
+<div id="audioplayer" class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="span3">
+            <label>Playlist:</label>
+            <select class="da-pl-select">
+
+            </select>
+        </div>
+        <div class="span9">
+            <div class="da-title"></div>
+            <div class="da-progress progress progress-striped active">
+                <div class="bar bar-success" style="width: 0%;"></div>
+            </div>
+            <div class="da-loaded progress">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+            <div class="da-time text-right">
+                <span class="da-time-progress"></span>
+                <span class="da-time-total"></span>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="btn-group">
+                            <button class="da-prev btn"><i class="icon-step-backward"></i></button>
+                            <button class="da-play btn"><i class="icon-play"></i></button>
+                            <button class="da-pause btn"><i class="icon-pause"></i></button>
+                            <button class="da-next btn"><i class="icon-step-forward"></i></button>
+                        </div>
+                    </div>
+                    <div class="span3 da-slider">
+                        <input class="da-volume" type="range" min="0" max="100" step="1" value="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <audio class="da-audio">
+            <p>Your Browser Does Not Support HTML5 audio</p>
+        </audio>
+    </div>
+</div>
+
+
+<script>
+
+    $('#audioplayer').daraudio({
+        defaultVolume: 0.5
+        , playListDef: [
+            {
+                "name": "default", "folder": "http://www.darmce.com/audio/",
+                playList: [
+                    {
+                        "Title": "Apache Indian - Boom Shack-A-Lack",
+                        "url": "boom.mp3",
+                        "type": "audio/mpeg"
+                    },
+                    {
+                        "Title": "Jason Isbell and the 400 Unit - Go It Alone",
+                        "url": "02 Go It Alone.mp3",
+                        "type": "audio/mpeg"
+                    }
+                ]
+            },
+            {
+                "name": "southeastern", "folder": "http://www.darmce.com/audio/", "playList": "http://www.darmce.com/audio/playlists/southeastern.json"
+            }
+        ]
+    });
+
+</script>
 </body>
 </html>
