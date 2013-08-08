@@ -15,7 +15,34 @@ In your web page:
 <script src="dist/daraudio.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+   $('#yourDiv').daraudio(
+     {
+        defaultVolume: 0.5
+        , playlistDef : [
+            {
+                name: "playlist1"
+                , folder: "path\to\audio\root"
+                , playList: "playlists\playlist1.json"
+            }
+            ,
+            {
+                name: "playlist2"
+                , folder: "path\to\audio\root"
+                , playList: [
+                    {
+                        Title: "Artist One - Song One"
+                        , url: "song1.mp3"
+                        , type: "audio/mpeg"
+                    }
+                    ,
+                    {
+                        Title: "Artist One - Song Two"
+                        , url: "song2.mp3"
+                        , type: "audio/mpeg"
+                    }
+                ]
+            }
+        ]
 });
 </script>
 ```
@@ -24,7 +51,9 @@ jQuery(function($) {
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+[Simple Example][darmce]
+
+[darmce]: http://www.darmce.com/sites/dar-audio/examples/example.html
 
 ## Release History
 _(Nothing yet)_
