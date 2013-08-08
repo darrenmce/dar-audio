@@ -15,8 +15,7 @@ In your web page:
 <script src="dist/daraudio.min.js"></script>
 <script>
 jQuery(function($) {
-   $('#yourDiv').daraudio(
-     {
+    $('#yourDiv').daraudio({
         defaultVolume: 0.5
         , playlistDef : [
             {
@@ -43,7 +42,7 @@ jQuery(function($) {
                 ]
             }
         ]
-});
+    });
 </script>
 ```
 
