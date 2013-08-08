@@ -221,9 +221,13 @@
             });
 
             //load first list then play
-            this.pl().load(function () {
-                self.next(true);
-            });
+            if (self.playLists.length <= 0) {
+                self.$ele.find('.da-title').html('<h2>No Playlist Loaded.</h2>');
+            } else {
+                this.pl().load(function () {
+                    self.next(true);
+                });
+            }
 
 
             return self;
@@ -247,16 +251,16 @@
     /* PLUGIN DEFINITION */
 
     $.fn.daraudio = function (options) {
+        var opts = options || {};
         return this.each(function () {
             var $self = $(this);
             var data = $self.data('daraudio');
             if (!data) {
-                $self.data('daraudio', (data = new DarAudio(this, options)));
+                $self.data('daraudio', (data = new DarAudio(this, opts)));
                 data.loadHtml().loadPlayLists().init();
             }
         });
     };
 
     $.fn.daraudio.Constructor = DarAudio;
-})
-    (jQuery);
+})(jQuery);
