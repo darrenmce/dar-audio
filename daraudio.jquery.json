@@ -2,7 +2,7 @@
     "name": "daraudio",
     "title": "DarAudio",
     "description": "jQuery plugin for an HTML5 audio player with playlists.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "homepage": "https://github.com/darrenmce/dar-audio",
     "author": {
         "name": "Darren",

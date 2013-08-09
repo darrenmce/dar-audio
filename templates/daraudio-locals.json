@@ -1,7 +1,0 @@
-{
-    da: {
-        classes: {
-            row: "row-fluid", span3: "span3", span8: "span8", progress: "progress", textRight: "text-right", controlsContainer: "fluid-container", buttonGroup: "btn-group", button: "btn", iconPrev: "icon-step-backward", iconPlay: "icon-play", iconPause: "icon-pause", iconNext: "icon-step-forward"
-        }
-    }
-}

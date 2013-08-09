@@ -55,4 +55,5 @@ _(Coming soon)_
 [darmce]: http://www.darmce.com/sites/dar-audio/examples/example.html
 
 ## Release History
-_(Nothing yet)_
+0.1.0 - Initial release
+0.2.0 - Added HTML templating (Jade)
