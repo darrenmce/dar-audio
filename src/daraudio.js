@@ -234,7 +234,7 @@
         },
         loadHtml: function () {
             var self = this;
-            this.$ele.html(window.templatizer.daraudioTemplate(self.TemplateLocals));
+            this.$ele.html(templatizer.daraudioTemplate(self.TemplateLocals));
             return self;
         }
     };
