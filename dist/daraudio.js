@@ -1,4 +1,4 @@
-/*! DarAudio - v0.1.0 - 2013-08-08
+/*! DarAudio - v0.2.0 - 2013-08-08
 * https://github.com/darrenmce/dar-audio
 * Copyright (c) 2013 Darren; Licensed MIT */
 (function () {
