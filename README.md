@@ -47,7 +47,36 @@ jQuery(function($) {
 ```
 
 ## Documentation
-_(Coming soon)_
+
+###Playlists:
+
+<b>option:</b> playlistDef
+
+
++   name:
+        The name of the playlist to be displayed in the dropdown.
+
++   folder:
+        The audio root folder, this will be the context for the relative paths in the playlist.
+
++   playList:
+        Either a string with the location of the .json file containing the playList data, or the actual array.
+        ex.
+            ```playList: "playlists\playlist1.json"```
+        OR
+            ```playList: [{...}, {...}, ...]```
+
+    <b>option:</b> playList (array format)
+
+    each playlist object(song) should have the following 3 key/values:
+
+    +   Title:
+            The name of the track to be displayed.
+    +   url:
+            The relative path for the audio file (based on the folder defined above)
+    +   type:
+            The file type of the audio file. ("audio/mpeg", "audio/wav", "audio/oggl; codecs=\"vorbis\""..)
+
 
 ## Examples
 [Simple Example][darmce]
