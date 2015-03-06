@@ -78,10 +78,6 @@ jQuery(function($) {
             The file type of the audio file. ("audio/mpeg", "audio/wav", "audio/oggl; codecs=\"vorbis\""..)
 
 
-## Examples
-[Simple Example][darmce]
-
-[darmce]: http://www.darmce.com/sites/dar-audio/examples/example.html
 
 ## Release History
 0.1.0 - Initial release
